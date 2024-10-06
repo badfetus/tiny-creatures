@@ -7,7 +7,7 @@ var bulletClass = preload("res://enemy/EnemyBullet.tscn")
 @onready var player: Player = get_parent().get_parent().get_node("Player")
 
 func _ready() -> void:
-	score += 1
+	score += 4
 	health += 20
 	expDropped += 2
 	speed -= 50

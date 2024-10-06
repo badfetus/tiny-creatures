@@ -1,6 +1,6 @@
 extends LineEdit
 
-var allowed_chars = "qwertyuiopasdfghjklzxcvbnm0123456789" 
+var allowed_chars = "qwertyuiopasdfghjklzxcvbnm0123456789QWERTYUIOPASDFGHJKLZXCVBNM" 
 
 func _physics_process(_delta):
 	var validated = ""

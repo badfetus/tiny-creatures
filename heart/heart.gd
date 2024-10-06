@@ -10,7 +10,7 @@ var healRate = 5.0
 
 var lastDamageTime = -100.0
 var currTime = 0.0
-
+@onready var savegame = get_node("/root/Savegame")
 var angle = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,11 +46,22 @@ func handleHeartBeat():
 		$Sprite2D.scale.y = 0.95
 
 func _draw() -> void:
-	draw_circle(Vector2(0, -15), barrier, Color(1, 1, 1, 0.5), false, 1, true)
-	draw_arc(Vector2(0, -15), barrier, angle, angle + PI / 2, 32, Color.WHITE, 5, true)
+	if(barrier >= minHealth):
+		draw_circle(Vector2(0, -15), barrier, Color(1, 1, 1, 0.5), false, 1, true)
+		draw_arc(Vector2(0, -15), barrier, angle, angle + PI / 2, 32, Color.WHITE, 5, true)
 
 func damage(value: float):
+	if(barrier < minHealth):
+		print(barrier)
+		loseGame()
+		return
 	lastDamageTime = currTime
 	barrier -= value
+	print("took damage, hp:" + str(barrier))
 	get_parent().combo = 0
 	get_parent().updateUI()
+	
+func loseGame():
+	Savegame.score = get_parent().score
+	var menuScene = load("res://other/MainMenu.tscn")
+	get_tree().change_scene_to_packed(menuScene)

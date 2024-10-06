@@ -15,6 +15,8 @@ func _physics_process(delta: float) -> void:
 	while(timeSinceLastSpawn >= nextSpawn):
 		timeSinceLastSpawn -= nextSpawn
 		spawnTime *= 0.99
+		if(totalSpawns > 2_000):
+			spawnTime *= 0.95 #die!
 		spawnEnemy()
 		nextSpawn = spawnTime * randf_range(0.8, 1.2)
 		

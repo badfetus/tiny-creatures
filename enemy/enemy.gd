@@ -11,6 +11,8 @@ var score = 1
 
 var expDropped = 5
 
+var damageDealt = false
+
 func _ready() -> void:
 	motion_mode = MOTION_MODE_FLOATING
 	
@@ -25,7 +27,10 @@ func handleCollisions():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if(collision.get_collider().name == "HeartCollider"):
-			heart.damage(damage)
+			if(!damageDealt):
+				heart.damage(damage)
+				damageDealt = true
+				print("Damage dealt by: " + str(self.get_rid()))
 			queue_free()
 
 func takeDamage(damageTaken):

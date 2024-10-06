@@ -14,6 +14,10 @@ config/name="Tiny Creatures"
 run/main_scene="res://other/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
+[autoload]
+
+Savegame="*res://other/savegame.tscn"
+
 [display]
 
 window/size/viewport_width=1920

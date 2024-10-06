@@ -10,7 +10,7 @@ var size
 var covidClass = preload("res://enemy/covidEnemy.tscn")
 
 func _ready() -> void:
-	score += 4
+	score += 19
 	health += 20
 	expDropped += 15
 	speed = 0

@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce0thru0o37mr"]
+[gd_scene load_steps=3 format=3 uid="uid://bguhw7beiowrv"]
 
-[ext_resource type="Script" path="res://other/MainMenu.gd" id="1_nvryv"]
-[ext_resource type="Script" path="res://other/LineEdit.gd" id="2_mjwkf"]
+[ext_resource type="Script" path="res://other/MainMenu.gd" id="1_jpw4e"]
+[ext_resource type="Script" path="res://other/LineEdit.gd" id="2_pgisx"]
 
 [node name="MainMenu" type="ColorRect"]
 anchors_preset = 15
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
-script = ExtResource("1_nvryv")
+script = ExtResource("1_jpw4e")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(100, 100)
@@ -51,18 +51,8 @@ offset_right = 1356.0
 offset_bottom = 1073.0
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
-text = "Leaderboard:
+text = "[center]Leaderboard:
 No connection"
-
-[node name="LastScore" type="RichTextLabel" parent="."]
-layout_mode = 1
-offset_left = 1411.0
-offset_top = -5.0
-offset_right = 1913.0
-offset_bottom = 324.0
-theme_override_font_sizes/normal_font_size = 48
-bbcode_enabled = true
-text = "Last Score: 0"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
@@ -77,4 +67,4 @@ placeholder_text = "Enter name"
 alignment = 1
 max_length = 16
 context_menu_enabled = false
-script = ExtResource("2_mjwkf")
+script = ExtResource("2_pgisx")

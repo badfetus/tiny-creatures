@@ -41,9 +41,9 @@ func spawn():
 	var enemy = enemyType.instantiate()
 	enemy.position = position
 	if(spawnType == 0):
-		enemy.health += totalSpawns * 5
-	elif(spawnType == 1):
 		enemy.health += totalSpawns * 3
+	elif(spawnType == 1):
+		enemy.health += totalSpawns * 2
 	else:
 		enemy.health += totalSpawns
 	enemies.add_child(enemy)
