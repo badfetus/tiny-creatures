@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhrk0j6ns8gps"]
+
+[ext_resource type="Script" path="res://upgrades/upgradeHandler.gd" id="1_dxs0p"]
+[ext_resource type="PackedScene" uid="uid://b4h7bhwygmnh5" path="res://upgrades/UpgradeMenu.tscn" id="2_firnk"]
+
+[node name="UpgradeHandler" type="Node2D"]
+script = ExtResource("1_dxs0p")
+
+[node name="UpgradeMenu" parent="." instance=ExtResource("2_firnk")]

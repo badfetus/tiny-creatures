@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cncog7vtbuvdo"]
+[gd_scene load_steps=5 format=3 uid="uid://cncog7vtbuvdo"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_08jly"]
 [ext_resource type="Texture2D" uid="uid://did1kjkyghr57" path="res://player/player.png" id="2_1b6ua"]
+[ext_resource type="PackedScene" uid="uid://dhrk0j6ns8gps" path="res://upgrades/UpgradeHandler.tscn" id="3_4h6sq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hbf7o"]
 radius = 50.0
@@ -18,3 +19,6 @@ texture = ExtResource("2_1b6ua")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("CircleShape2D_hbf7o")
+
+[node name="UpgradeHandler" parent="." instance=ExtResource("3_4h6sq")]
+top_level = true

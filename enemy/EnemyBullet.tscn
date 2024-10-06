@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5xli5j5pmigp"]
+
+[ext_resource type="Script" path="res://enemy/enemy_bullet.gd" id="1_euefr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kob5x"]
+radius = 5.0
+
+[node name="EnemyBullet" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 5
+script = ExtResource("1_euefr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kob5x")

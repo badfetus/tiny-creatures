@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://daqo35le2sej0"]
+
+[ext_resource type="Script" path="res://game/level.gd" id="1_6wihs"]
+[ext_resource type="PackedScene" uid="uid://cncog7vtbuvdo" path="res://player/player.tscn" id="1_5242l"]
+[ext_resource type="PackedScene" uid="uid://cor2xo0poxo2o" path="res://heart/heart.tscn" id="1_gwm2u"]
+[ext_resource type="Texture2D" uid="uid://cjsk40inggqw2" path="res://game/heartBG.png" id="2_lwriw"]
+[ext_resource type="PackedScene" uid="uid://dw33g8qsl12ue" path="res://game/gameUI.tscn" id="3_htnv6"]
+[ext_resource type="PackedScene" uid="uid://caq4oafsb6vpq" path="res://game/wall.tscn" id="4_lfxdb"]
+[ext_resource type="PackedScene" uid="uid://dn7htatx007cu" path="res://enemy/enemy.tscn" id="7_t10cg"]
+[ext_resource type="PackedScene" uid="uid://dih0bcod5d6in" path="res://enemy/EnemySpawnHandler.tscn" id="8_44612"]
+[ext_resource type="AudioStream" uid="uid://v57a2acin2yt" path="res://sounds/Soundtrack.wav" id="9_855f3"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_6wihs")
+
+[node name="Heart" parent="." instance=ExtResource("1_gwm2u")]
+z_index = 4
+position = Vector2(0, 50)
+
+[node name="Player" parent="." instance=ExtResource("1_5242l")]
+z_index = 1
+position = Vector2(-500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lwriw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Control" parent="Camera2D" instance=ExtResource("3_htnv6")]
+
+[node name="Wall" parent="." instance=ExtResource("4_lfxdb")]
+position = Vector2(-1460, 0)
+
+[node name="Wall2" parent="." instance=ExtResource("4_lfxdb")]
+position = Vector2(0, -940)
+rotation = 1.5708
+
+[node name="Wall3" parent="." instance=ExtResource("4_lfxdb")]
+position = Vector2(1460, 0)
+rotation = 3.14159
+
+[node name="Wall4" parent="." instance=ExtResource("4_lfxdb")]
+position = Vector2(0, 1040)
+rotation = 4.71239
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("7_t10cg")]
+z_index = 5
+position = Vector2(852, 425)
+
+[node name="EnemySpawnHandler" parent="." instance=ExtResource("8_44612")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("9_855f3")
+volume_db = -5.0
+autoplay = true
