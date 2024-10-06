@@ -39,7 +39,7 @@ func takeDamage(damageTaken):
 		die()
 
 func die():
-	get_parent().get_parent().enemyDied(score)
+	get_parent().get_parent().enemyDied(score, position)
 	dropXP()
 	queue_free()
 	
