@@ -7,7 +7,7 @@ func getCurrentValue() -> String:
 	return str(player.speed)
 
 func getNewValue() -> String:
-	val = randi_range(25, 75)
+	val = randi_range(40, 80)
 	return str(player.speed + val)
 
 func getDescription() -> String:

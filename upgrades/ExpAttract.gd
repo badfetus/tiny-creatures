@@ -6,7 +6,7 @@ func getCurrentValue() -> String:
 	return str(player.expAttractRange)
 
 func getNewValue() -> String:
-	val = randi_range(20, 60)
+	val = randi_range(60, 100)
 	return str(player.expAttractRange + val)
 
 func getDescription() -> String:

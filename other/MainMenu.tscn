@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce0thru0o37mr"]
+
+[ext_resource type="Script" path="res://other/MainMenu.gd" id="1_nvryv"]
+[ext_resource type="Script" path="res://other/LineEdit.gd" id="2_mjwkf"]
+
+[node name="MainMenu" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_nvryv")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PlayButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 100
+text = "PLAY"
+
+[node name="Leaderboard" type="RichTextLabel" parent="."]
+layout_mode = 1
+offset_right = 1356.0
+offset_bottom = 1073.0
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Leaderboard:
+No connection"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 1408.0
+offset_top = 334.0
+offset_right = 1916.0
+offset_bottom = 409.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Enter name"
+alignment = 1
+max_length = 16
+context_menu_enabled = false
+script = ExtResource("2_mjwkf")

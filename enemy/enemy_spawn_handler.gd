@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		
 func spawnEnemy():
 	var spawner = spawnerClass.instantiate()
-	var x = 100 + (randi() % 500) - 960
+	var x = 100 + (randi() % 350) - 960
 	var y = 200 + (randi() % 780) - 540
 	
 	if((randi() % 2) == 1): #Right

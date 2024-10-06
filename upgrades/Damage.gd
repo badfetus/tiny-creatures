@@ -6,7 +6,7 @@ func getCurrentValue() -> String:
 	return str(player.damage)
 
 func getNewValue() -> String:
-	val = randi_range(5, 15)
+	val = randi_range(30, 70)
 	return str(player.damage + val)
 
 func getDescription() -> String:
