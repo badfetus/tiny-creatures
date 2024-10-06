@@ -23,7 +23,7 @@ var is_moving: bool = false
 
 var experience = 0
 var levelUpReq = 7
-var levelUpReqPerLevel = 12
+var levelUpReqPerLevel = 5
 
 var hasAura = false
 var auraDamage = 20
