@@ -34,8 +34,9 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func handleHeartBeat():
-	var audioStream: AudioStreamPlayer = get_parent().get_node("AudioStreamPlayer")
-	var time: float = audioStream.get_playback_position() + AudioServer.get_time_since_last_mix()
+	#var audioStream: AudioStreamPlayer = get_parent().get_node("AudioStreamPlayer")
+	var time: float = currTime #audioStream.get_playback_position() + AudioServer.get_time_since_last_mix()
+	#^commented out code is the proper way to do it but doesn't work on web build
 	
 	var beatTime: float = fmod(time - 0.1, 0.8)
 	if(beatTime > 0.4):
@@ -52,14 +53,12 @@ func _draw() -> void:
 
 func damage(value: float):
 	if(barrier < minHealth):
-		print(barrier)
 		loseGame()
 		return
 	lastDamageTime = currTime
 	barrier -= value
-	print("took damage, hp:" + str(barrier))
 	get_parent().combo = 0
-	get_parent().updateUI()
+	get_parent().updateUI(-1, -1, -1)
 	
 func loseGame():
 	Savegame.score = get_parent().score

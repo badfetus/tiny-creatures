@@ -30,7 +30,6 @@ func handleCollisions():
 			if(!damageDealt):
 				heart.damage(damage)
 				damageDealt = true
-				print("Damage dealt by: " + str(self.get_rid()))
 			queue_free()
 
 func takeDamage(damageTaken):

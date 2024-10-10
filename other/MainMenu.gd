@@ -28,8 +28,6 @@ func _on_HTTPRequest_request_completed(_result, _response_code, _headers, body):
 	var parse_result = json.parse(body.get_string_from_utf8())
 	if parse_result == OK:
 		var dict: Dictionary = json.get_data()
-		print(dict)
-		print("____________")
 		if(dict):
 			var leaderboard = dict.get("dreamlo").get("leaderboard").get("entry")
 			var string = "[center]Leaderboard:\n"

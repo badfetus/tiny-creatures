@@ -23,11 +23,12 @@ func updateUI(baseScore, effectiveCombo, deathPosition):
 	$Camera2D/Control/Label.text = "Score: " + str(score)
 	$Camera2D/Control/Label2.text = str(combo) + "x Combo"
 	
-	var scoreLabel = scoreClass.instantiate()
-	scoreLabel.score = baseScore
-	scoreLabel.mult = 1 + effectiveCombo
-	scoreLabel.position = deathPosition
-	add_child(scoreLabel)
+	if(baseScore > 0):
+		var scoreLabel = scoreClass.instantiate()
+		scoreLabel.score = baseScore
+		scoreLabel.mult = 1 + effectiveCombo
+		scoreLabel.position = deathPosition
+		add_child(scoreLabel)
 
 func updateXpUi(experience, levelUpReq):
 	var expUI: ColorRect = $Camera2D/Control/exp
